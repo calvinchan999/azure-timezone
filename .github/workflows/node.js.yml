@@ -13,7 +13,6 @@ jobs:
     strategy:
       matrix:
         node-version: [12.14.1]
-        token: "250ced0296b5ab647bd57972fd6a0cac2005242e3c73104a93eb25cfb3acc80b3-7aa45d3b-00a5-462d-a007-62bc7f57e1c700071985"
         # See supported Node.js release schedule at https://nodejs.org/en/about/releases/
 
     steps:
@@ -29,7 +28,7 @@ jobs:
       - name: Deploy to Azure Static Web Apps
         uses: Azure/static-web-apps-deploy@v1
         with:
-          azure_static_web_apps_api_token: ${{ matrix.token }}
+          azure_static_web_apps_api_token: ${{ secrets.TOKEN }}
           action: "upload"
           skip_api_build: true
           skip_app_build: true
