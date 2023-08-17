@@ -11,5 +11,6 @@ export class AppComponent implements OnInit {
   ngOnInit() {
     console.log('test');
     console.log(process.env);
+    console.log(environment.appVersion);
   }
 }
